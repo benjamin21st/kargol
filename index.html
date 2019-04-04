@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kargo! Search Engine</title>
+    <style>
+      .container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .kargo-logo {
+        height: 112px;
+      }
+
+      .exclamation-mark {
+        font-size: 50px;
+        font-style: italic;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div id="search-page">
+      <div class="container">
+        <img class="kargo-logo" src="logo.png" >
+        <span class="exclamation-mark">!</span>
+      </div>
+
+      <div class="container">
+        <input id="search-input" />
+        <button id="search-button">Kargo<em>!</em> Search</button>
+      </div>
+    </div>
+
+    <div id="results-page"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -33,3 +33,29 @@ const db = {
   ],
 };
 
+function searchWithKeyWords(keyWords) {
+  const results = db[keyWords];
+  const resultsPage = document.querySelector('#results-page');
+  const resultHtmlParts = [];
+
+  results.forEach(res => {
+    let resHtml = `<li><a class="result-link" href="${res.link}">${res.title}</a><div>${res.description}</div></li>`;
+    resultHtmlParts.push(resHtml);
+  });
+
+  resultsPage.innerHTML = `<ul>${resultHtmlParts.join('\n')}</ul>`;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const searchBtn = document.querySelector('#search-button');
+  const searchInput = document.querySelector('#search-input');
+
+  searchBtn.addEventListener('click', () => searchWithKeyWords(searchInput.value));
+
+  searchInput.addEventListener('keyup', (ev) => {
+    if (ev.keyCode === 13) {
+      searchWithKeyWords(searchInput.value);
+    }
+  })
+});
+
