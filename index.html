@@ -2,6 +2,11 @@
 <html>
   <head>
     <title>Kargo! Search Engine</title>
+    <link rel="stylesheet" href="uikit-3.0.3/css/uikit.min.css">
+
+    <script src="uikit-3.0.3/js/uikit.min.js"></script>
+    <script src="uikit-3.0.3/js/uikit-icons.min.js"></script>
+
     <style>
       .container {
         width: 100%;
@@ -19,6 +24,14 @@
         font-style: italic;
       }
 
+      #search-input {
+        height: 30px;
+      }
+
+      .list-item {
+        margin-bottom: 30px;
+      }
+
     </style>
   </head>
 
@@ -30,12 +43,19 @@
       </div>
 
       <div class="container">
-        <input id="search-input" />
-        <button id="search-button">Kargo<em>!</em> Search</button>
+        <form class="uk-form-horizontal uk-form-width-large">
+          <input id="search-input" class="uk-input uk-width-2-3" />
+          <button
+            id="search-button"
+            class="uk-button uk-button-default uk-button-small">Kargo<em>!</em> Search</button>
+        </form>
       </div>
     </div>
 
-    <div id="results-page"></div>
+    <div
+      id="results-page"
+      class="uk-container-xsmall uk-align-center"
+      ></div>
 
     <script src="app.js"></script>
   </body>
